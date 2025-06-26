@@ -13,7 +13,7 @@ export class IncrementCounter extends SingletonAction<CounterSettings> {
   override onWillAppear (ev: WillAppearEvent<CounterSettings>): void | Promise<void> {
     return ev.action.setTitle(`${ev.payload.settings.count ?? 0}`)
   }
-  
+
   /**
    * Listens for the {@link SingletonAction.onKeyDown} event which is emitted by Stream Deck when an action is pressed. Stream Deck provides various events for tracking interaction
    * with devices including key down/up, dial rotations, and device connectivity, etc. When triggered, {@link ev} object contains information about the event including any payloads
@@ -25,8 +25,8 @@ export class IncrementCounter extends SingletonAction<CounterSettings> {
     const { settings } = ev.payload
     settings.incrementBy ??= 1
     settings.count = (settings.count ?? 0) + settings.incrementBy
-    
-    // Update the current count in the action's settings, and change the title.
+
+		// Update the current count in the action's settings, and change the title.
     await ev.action.setSettings(settings)
     await ev.action.setTitle(`${settings.count}`)
   }
@@ -36,6 +36,6 @@ export class IncrementCounter extends SingletonAction<CounterSettings> {
  * Settings for {@link IncrementCounter}.
  */
 type CounterSettings = {
-  count?: number;
-  incrementBy?: number;
-};
+	count?: number
+	incrementBy?: number
+}

@@ -1,14 +1,16 @@
 root = true
 
-[*.js]
+[*]
+charset = utf-8
 end_of_line = lf
 insert_final_newline = true
-charset = utf-8
-indent_style = space
-indent_size = 2
-
-[*.css]
-end_of_line = lf
-
-[Makefile]
 indent_style = tab
+max_line_length = 120
+
+[*.{json,jsonc,md}]
+indent_size = 4
+indent_style = space
+
+[*.{yaml,yml}]
+indent_size = 2
+indent_style = space
