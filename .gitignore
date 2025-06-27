@@ -1,13 +1,14 @@
 # Node.js
 node_modules/
-.env
-.editorconfig
-*.log
+package-lock.json
 
-# Editor settings
+# Environment files
+.env
+.env.*.local
+
+# IDEs and editors
 .vscode/
 .idea/
 
-# Stream Deck plugin build
-*.sdPlugin/bin/
-*.sdPlugin/logs/
+# Misc
+com.mdb.hello-world.sdPlugin/
