@@ -2,7 +2,7 @@
     "scripts": {
         "build": "rollup -c",
         "watch": "rollup -c -w --watch.onEnd=\"streamdeck restart com.mdb.hello-world\"",
-        "lint": "eslint --max-warnings 0"
+        "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --max-warnings 0"
     },
     "prettier": "@elgato/prettier-config",
     "type": "module",
