@@ -7,22 +7,8 @@
     "trailingComma": "all",
     "useTabs": true,
     "plugins": [
-        "@trivago/prettier-plugin-sort-imports",
         "prettier-plugin-multiline-arrays"
     ],
-    "importOrder": [
-        "<THIRD_PARTY_MODULES>",
-        "^[./]"
-    ],
-    "importOrderParserPlugins": [
-        "typescript",
-        "decoratorAutoAccessors",
-        "explicitResourceManagement",
-        "[\"decorators\", { \"decoratorsBeforeExport\": true }]"
-    ],
-    "importOrderSeparation": true,
-    "importOrderSortSpecifiers": true,
-    "importOrderCaseInsensitive": true,
     "multilineArraysWrapThreshold": -1,
     "overrides": [
         {

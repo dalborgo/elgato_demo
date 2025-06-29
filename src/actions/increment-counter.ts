@@ -1,4 +1,4 @@
-import { action, KeyDownEvent, SingletonAction, WillAppearEvent } from "@elgato/streamdeck"
+import { action, KeyDownEvent, SingletonAction, WillAppearEvent } from '@elgato/streamdeck'
 
 @action({ UUID: "com.mdb.hello-world.increment" })
 export class IncrementCounter extends SingletonAction<CounterSettings> {

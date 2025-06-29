@@ -1,9 +1,10 @@
-import commonjs from "@rollup/plugin-commonjs"
-import nodeResolve from "@rollup/plugin-node-resolve"
-import terser from "@rollup/plugin-terser"
-import typescript from "@rollup/plugin-typescript"
-import path from "node:path"
-import url from "node:url"
+import path from 'node:path'
+import url from 'node:url'
+
+import commonjs from '@rollup/plugin-commonjs'
+import nodeResolve from '@rollup/plugin-node-resolve'
+import terser from '@rollup/plugin-terser'
+import typescript from '@rollup/plugin-typescript'
 
 const isWatching = !!process.env.ROLLUP_WATCH
 const sdPlugin = 'com.mdb.hello-world.sdPlugin'
@@ -23,7 +24,7 @@ const config = {
 	plugins: [
 		{
 			name: "watch-externals",
-			buildStart: function() {
+			buildStart: function () {
 				this.addWatchFile(`${sdPlugin}/manifest.json`)
 			},
 		},
