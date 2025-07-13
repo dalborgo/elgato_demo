@@ -7,6 +7,5 @@ streamDeck.logger.setLevel(LogLevel.TRACE)
 
 // Register the increment action.
 streamDeck.actions.registerAction(new IncrementCounter())
-
 // Finally, connect to the Stream Deck.
 streamDeck.connect()

@@ -23,7 +23,7 @@
     "Category": "My Dev",
     "CategoryIcon": "imgs/plugin/category-icon",
     "CodePath": "bin/plugin.js",
-    "Description": "dsds",
+    "Description": "app base",
     "Icon": "imgs/plugin/marketplace",
     "SDKVersion": 2,
     "Software": {
@@ -41,7 +41,7 @@
     ],
     "Nodejs": {
         "Version": "20",
-        "Debug": "enabled"
+        "Debug": "--inspect=127.0.0.1:60456"
     },
     "UUID": "com.mdb.hello-world"
 }

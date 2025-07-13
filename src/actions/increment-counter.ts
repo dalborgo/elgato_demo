@@ -1,4 +1,4 @@
-import { action, KeyDownEvent, SingletonAction, WillAppearEvent } from '@elgato/streamdeck'
+import streamDeck, { action, KeyDownEvent, SingletonAction, WillAppearEvent } from '@elgato/streamdeck'
 
 @action({ UUID: "com.mdb.hello-world.increment" })
 export class IncrementCounter extends SingletonAction<CounterSettings> {
@@ -10,7 +10,7 @@ export class IncrementCounter extends SingletonAction<CounterSettings> {
 		const { settings } = ev.payload
 		settings.incrementBy ??= 1
 		settings.count = (settings.count ?? 0) + settings.incrementBy
-
+		streamDeck.logger.info('DUSPAAAA1ZZZZ333', settings.count)
 		await ev.action.setSettings(settings)
 		await ev.action.setTitle(`${settings.count}`)
 	}
