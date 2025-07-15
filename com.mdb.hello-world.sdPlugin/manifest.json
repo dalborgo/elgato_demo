@@ -21,7 +21,7 @@
         }
     ],
     "Category": "My Dev",
-    "CategoryIcon": "imgs/plugin/category-icon",
+    "CategoryIcon": "imgs/plugin/category",
     "CodePath": "bin/plugin.js",
     "Description": "app base",
     "Icon": "imgs/plugin/marketplace",
