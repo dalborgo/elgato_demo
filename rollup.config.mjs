@@ -1,19 +1,16 @@
-import path from "node:path"
-import url from "node:url"
+import path from 'node:path'
+import url from 'node:url'
 
-import commonjs from "@rollup/plugin-commonjs"
-import nodeResolve from "@rollup/plugin-node-resolve"
-import terser from "@rollup/plugin-terser"
-import typescript from "@rollup/plugin-typescript"
-import copy from "rollup-plugin-copy"
-import fg from "fast-glob"
+import commonjs from '@rollup/plugin-commonjs'
+import nodeResolve from '@rollup/plugin-node-resolve'
+import terser from '@rollup/plugin-terser'
+import typescript from '@rollup/plugin-typescript'
+import fg from 'fast-glob'
+import copy from 'rollup-plugin-copy'
 
 const isWatching = !!process.env.ROLLUP_WATCH
 const sdPlugin = "com.mdb.hello-world.sdPlugin"
 
-/**
- * @type {import("rollup").RollupOptions}
- */
 const config = {
 	input: "src/plugin.ts",
 	output: {
@@ -27,11 +24,11 @@ const config = {
 		{
 			name: "watch-externals",
 			async buildStart () {
+				this.addWatchFile(`${sdPlugin}/manifest.json`)
 				const files = await fg(["src/**/*.js", "src/**/*.ps1"])
 				for (const file of files) {
 					this.addWatchFile(path.resolve(file))
 				}
-				this.addWatchFile(`${sdPlugin}/manifest.json`)
 			},
 		},
 		typescript({
@@ -58,9 +55,9 @@ const config = {
 					flatten: false,
 				},
 				{
-					src: "src/**/*.ps1",
-					dest: `${sdPlugin}/bin/`,
-					flatten: false,
+					src: 'src/scripts/**/*.ps1',
+					dest: `${sdPlugin}/bin/scripts/`,
+					flatten: true,
 				},
 			],
 			verbose: true,
