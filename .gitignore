@@ -10,5 +10,7 @@ package-lock.json
 .vscode/
 .idea/
 
+logs/
+
 # Misc
-com.mdb.hello-world.sdPlugin/
+com.mdb.hello-world.sdPlugin/bin/*

@@ -13,7 +13,7 @@ export default defineConfig([
 			"@typescript-eslint/member-ordering": "off",
 			"@typescript-eslint/sort-type-constituents": "off",
 			"jsdoc/require-jsdoc": "off",
-			
+			curly: ['warn', 'all'],
 			// ✅ Regola per ordinare gli import con plugin-import
 			'import/order': [
 				'warn',

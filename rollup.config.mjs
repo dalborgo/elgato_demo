@@ -5,6 +5,7 @@ import commonjs from '@rollup/plugin-commonjs'
 import nodeResolve from '@rollup/plugin-node-resolve'
 import terser from '@rollup/plugin-terser'
 import typescript from '@rollup/plugin-typescript'
+import copy from 'rollup-plugin-copy'
 
 const isWatching = !!process.env.ROLLUP_WATCH
 const sdPlugin = 'com.mdb.hello-world.sdPlugin'
@@ -44,6 +45,20 @@ const config = {
 				this.emitFile({ fileName: "package.json", source: `{ "type": "module" }`, type: "asset" })
 			},
 		},
+		copy({
+			targets: [
+				{
+					src: 'src/*.js',
+					dest: `${sdPlugin}/bin/`
+				},
+				{
+					src: 'src/execPowershellFile.js',
+					dest: `${sdPlugin}/bin/`
+				},
+			],
+			verbose: true,
+			hook: 'writeBundle'
+		})
 	],
 }
 
