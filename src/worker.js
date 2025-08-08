@@ -4,8 +4,8 @@ import { execPS } from './execPS.js'
 
 async function fetchMonitorInfo() {
 	try {
-		const displays = await execPS("test.ps1")
-		return process.send?.({ type: 'displayState', value: displays.map((row) => `${row['RefreshRate']} Hz`) })
+		const value = await execPS('get_display_refresh_rate.ps1')
+		return process.send?.({ type: 'displayState', value })
 	} catch (err) {
 		streamDeck.logger.error("Errore esecuzione PowerShell:", err.message)
 	}

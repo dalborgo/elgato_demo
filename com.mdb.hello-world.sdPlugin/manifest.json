@@ -4,17 +4,14 @@
     "Author": "mdb",
     "Actions": [
         {
-            "Name": "Counter",
-            "UUID": "com.mdb.hello-world.increment",
-            "Icon": "imgs/actions/counter/icon",
-            "Tooltip": "Displays a count, which increments by one on press.",
-            "PropertyInspectorPath": "ui/increment-counter.html",
+            "Name": "Demo",
+            "UUID": "com.mdb.hello-world.show",
+            "Icon": "imgs/actions/show/icon",
             "Controllers": [
                 "Keypad"
             ],
             "States": [
                 {
-                    "Image": "imgs/actions/counter/key",
                     "TitleAlignment": "middle"
                 }
             ]

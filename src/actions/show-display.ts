@@ -22,18 +22,20 @@ function getDisplayState (): Promise<string[] | null> {
 	})
 }
 
-@action({ UUID: "com.mdb.hello-world.increment" })
-export class IncrementCounter extends SingletonAction {
+async function updateActionTitle (ev: WillAppearEvent | KeyDownEvent): Promise<void> {
+	const currentState = await getDisplayState()
+	const title = currentState?.join('\n') ?? ''
+	await ev.action.setTitle(title)
+}
+
+@action({ UUID: 'com.mdb.hello-world.show' })
+export class ShowDisplay extends SingletonAction {
 	override async onWillAppear (ev: WillAppearEvent): Promise<void> {
-		const currentState = await getDisplayState()
-		const title = currentState?.join('\n') ?? ''
-		await ev.action.setTitle(title)
+		await updateActionTitle(ev)
 	}
 
 	override async onKeyDown (ev: KeyDownEvent): Promise<void> {
-		const currentState = await getDisplayState()
-		const title = currentState?.join('\n') ?? ''
-		await ev.action.setTitle(title)
+		await updateActionTitle(ev)
 	}
 }
 
